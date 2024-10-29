@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Dashboard</title>
+</head>
+<body>
+    <h1>Your Dashboard</h1>
+    <h2>Your Items:</h2>
+    
+    <ul>
+        {% for item in items %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+
+    <form method="POST" action="{{ url_for('create_list') }}">
+        <input type="text" name="data_value" placeholder="Enter a new item" required>
+        <button type="submit">Add Item</button>
+    </form>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>
